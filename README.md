@@ -1,5 +1,6 @@
-# 2048 Game - https://erevis.github.io/2048Game
+# 2048 Game
 Web-based 2048 game created with JS, HTML, and CSS
+https://erevis.github.io/2048Game
 
 ## TODO:
 * Create slide animation
