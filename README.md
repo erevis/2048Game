@@ -1,5 +1,5 @@
 # 2048 Game
-Web-based 2048 game created with JS, HTML, and CSS
+Web-based 2048 game created with JS, HTML, and CSS 
 https://erevis.github.io/2048Game
 
 ## TODO:
