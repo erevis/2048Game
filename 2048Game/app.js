@@ -1,4 +1,4 @@
-import Game from "/engine/game.js"
+import Game from "/2048Game/engine/game.js"
 
 let game = new Game(4);
 game.setupNewGame();
