@@ -57,11 +57,13 @@ const limit = Math.tan(45 * 1.5 / 180 * Math.PI);
 const gestureZone = document.querySelector('.grid');
 
 gestureZone.addEventListener('touchstart', function(event) {
+    event.preventDefault();
     touchstartX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
 }, false);
 
 gestureZone.addEventListener('touchend', function(event) {
+    event.preventDefault();
     touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
     handleGesture(event);
