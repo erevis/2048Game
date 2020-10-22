@@ -49,6 +49,7 @@ function updateWindow() {
     if (game.over) {
         //while (gameBoard.firstChild) gameBoard.removeChild(gameBoard.firstChild);
         alert("game over!")
+        game.setupNewGame();
     }
 
     while (gameBoard.firstChild) gameBoard.removeChild(gameBoard.firstChild);
