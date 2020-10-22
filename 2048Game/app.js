@@ -63,6 +63,8 @@ function updateWindow() {
             console.log(color)
             square.setAttribute("style", "background-color: " + color)
             // square.setAttribute("")
+        } else {
+            square.innerHTML = "";
         }
         
         gameBoard.appendChild(square)
