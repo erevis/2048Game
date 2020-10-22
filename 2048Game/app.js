@@ -99,6 +99,7 @@ function handleGesture(e) {
 
 function updateWindow() {    
     if (game.over) {
+        updateWindow();
         //while (gameBoard.firstChild) gameBoard.removeChild(gameBoard.firstChild);
         alert("game over!")
     }
