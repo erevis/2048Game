@@ -1,4 +1,5 @@
-body, html {width: 100%; height: 100%; background-image: linear-gradient(#c4746e, #c44a41); overflow: hidden}
+body, html {width: 100%; height: 100%; background-image: linear-gradient(#c4746e, #c44a41); overflow: hidden; overflow-x: hidden}
+body {position: relative;}
 
 .wrapper {width: 70vmin; height: 70vmin; margin: 0 auto; background-color: #615751; border-radius: 15px;
 }
