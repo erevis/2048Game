@@ -103,23 +103,23 @@ function updateWindow() {
     }
 
     if (!game.over) {
-      while (gameBoard.firstChild) {
-        gameBoard.removeChild(gameBoard.firstChild);
-      }
+        while (gameBoard.firstChild) {
+            gameBoard.removeChild(gameBoard.firstChild);
+        }
 
-      for (let i=0; i < game.size*game.size; i++) {
-          let square = document.createElement('div')
-          square.className="cell"
-          square.innerHTML = game.board[i];
+        for (let i=0; i < game.size*game.size; i++) {
+            let square = document.createElement('div')
+            square.className = "cell"
+            square.innerHTML = game.board[i];
 
-          if (game.board[i] != 0) {
-              let color = colors[Math.log2(game.board[i])];
-              square.setAttribute("style", "background-color: " + color)
-          } else {
-              square.innerHTML = "";
-          }
-          
-          gameBoard.appendChild(square)
-      }
+            if (game.board[i] != 0) {
+                let color = colors[Math.log2(game.board[i])];
+                square.setAttribute("style", "background-color: " + color)
+            } else {
+                square.innerHTML = "";
+            }
+            
+            gameBoard.appendChild(square)
+        }
     }
 }

@@ -37,7 +37,7 @@ export default class Game {
         this.moveFunctions.forEach(elem => elem(this.getGameState()))
         let flag = false; //flag that move was made
 
-        if(direction == 'up') {
+        if (direction == 'up') {
             //turn into 2d array
             const twoDimArray = [];
             for (let i=0; i<this.size; i++)
@@ -52,7 +52,7 @@ export default class Game {
                                 if (twoDimArray[k][i] == 0) {temp=true}
                                 twoDimArray[k][i] = twoDimArray[k + 1][i]
                                 twoDimArray[k + 1][i] = 0
-                                if(temp && twoDimArray[k][i] != 0) {flag=true}
+                                if (temp && twoDimArray[k][i] != 0) {flag=true}
                             }
                         }
                     }
@@ -75,13 +75,13 @@ export default class Game {
             upShift();
             //turn into 1d array
             this.board = [];
-            for(var i = 0; i < twoDimArray.length; i++) {
+            for (var i = 0; i < twoDimArray.length; i++) {
                 var row = twoDimArray[i];
-                for(var j = 0; j < row.length; j++) {
+                for (var j = 0; j < row.length; j++) {
                     this.board.push(twoDimArray[i][j])
                 }
             }
-        } else if(direction == 'down') {
+        } else if (direction == 'down') {
             //turn into 2d array
             let twoDimArray = [];
             for (let i=0; i<this.size; i++)
@@ -96,7 +96,7 @@ export default class Game {
                                 if (twoDimArray[k][i] == 0) {temp=true}
                                 twoDimArray[k][i] = twoDimArray[k - 1][i]
                                 twoDimArray[k - 1][i] = 0
-                                if(temp && twoDimArray[k][i] != 0) {flag=true}
+                                if (temp && twoDimArray[k][i] != 0) {flag=true}
                             }
                         }
                     }
@@ -119,13 +119,13 @@ export default class Game {
             downShift();
             //turn into 1d array
             this.board = [];
-            for(var i = 0; i < twoDimArray.length; i++) {
+            for (var i = 0; i < twoDimArray.length; i++) {
                 var row = twoDimArray[i];
-                for(var j = 0; j < row.length; j++) {
+                for (var j = 0; j < row.length; j++) {
                     this.board.push(twoDimArray[i][j])
                 }
             }
-        } else if(direction == 'right') {
+        } else if (direction == 'right') {
             //turn into 2d array
             const twoDimArray = [];
             for (let i=0; i<this.size; i++)
@@ -140,7 +140,7 @@ export default class Game {
                                 if (twoDimArray[i][k] == 0) {temp=true}
                                 twoDimArray[i][k] = twoDimArray[i][k - 1]
                                 twoDimArray[i][k - 1] = 0
-                                if(temp && twoDimArray[i][k] != 0) {flag=true}
+                                if (temp && twoDimArray[i][k] != 0) {flag=true}
                             }
                         }
                     }
@@ -163,9 +163,9 @@ export default class Game {
             rightShift();
             //turn into 1d array
             this.board = [];
-            for(var i = 0; i < twoDimArray.length; i++) {
+            for (var i = 0; i < twoDimArray.length; i++) {
                 var row = twoDimArray[i];
-                for(var j = 0; j < row.length; j++) {
+                for (var j = 0; j < row.length; j++) {
                     this.board.push(twoDimArray[i][j])
                 }
             }
@@ -184,7 +184,7 @@ export default class Game {
                                 if (twoDimArray[i][k] == 0) {temp=true}
                                 twoDimArray[i][k] = twoDimArray[i][k + 1]
                                 twoDimArray[i][k + 1] = 0
-                                if(temp && twoDimArray[i][k] != 0) {flag=true}
+                                if (temp && twoDimArray[i][k] != 0) {flag=true}
                             }
                         }
                     }
@@ -207,9 +207,9 @@ export default class Game {
             leftShift();
             //turn into 1d array
             this.board = [];
-            for(var i = 0; i < twoDimArray.length; i++) {
+            for (var i = 0; i < twoDimArray.length; i++) {
                 var row = twoDimArray[i];
-                for(var j = 0; j < row.length; j++) {
+                for (var j = 0; j < row.length; j++) {
                     this.board.push(twoDimArray[i][j])
                 }
             }
