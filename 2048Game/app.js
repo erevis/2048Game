@@ -1,4 +1,4 @@
-import Game from "/2048Game/engine/game.js"
+import Game from "/engine/game.js"
 
 let game = new Game(4);
 game.setupNewGame();
@@ -11,7 +11,6 @@ resetButton.addEventListener('click', function() {
     updateWindow();
 })
 
-
 function createBoard() {
     for (let i=0; i < game.size*game.size; i++) {
         let square = document.createElement('div')
@@ -20,6 +19,7 @@ function createBoard() {
         game.board.push(square);
     }
 }
+
 createBoard();
 updateWindow();
 
@@ -30,22 +30,19 @@ function checkKey(e) {
     if (e.keyCode == '38') {
         game.move('up');
         updateWindow()
-    }
-    else if (e.keyCode == '40') {
+    } else if (e.keyCode == '40') {
         game.move('down');
         updateWindow()
-    }
-    else if (e.keyCode == '37') {
+    } else if (e.keyCode == '37') {
         game.move('left');
         updateWindow()
-    }
-    else if (e.keyCode == '39') {
+    } else if (e.keyCode == '39') {
         game.move('right');
         updateWindow()
     }
 }
 
-// code from https://gist.github.com/SleepWalker/da5636b1abcbaff48c4d
+// touch control code from https://gist.github.com/SleepWalker/da5636b1abcbaff48c4d
 let pageWidth = window.innerWidth || document.body.clientWidth;
 let treshold = Math.max(1,Math.floor(0.01 * (pageWidth)));
 let touchstartX = 0;
@@ -95,35 +92,34 @@ function handleGesture(e) {
         console.log("tap");
     }
 }
+// end of touch control
 
-
-function updateWindow() {    
-    if (game.over) {
-        updateWindow();
-        //while (gameBoard.firstChild) gameBoard.removeChild(gameBoard.firstChild);
-        alert("game over!")
-    }
-
-    while (gameBoard.firstChild) gameBoard.removeChild(gameBoard.firstChild);
-
-    for (let i=0; i < game.size*game.size; i++) {
-        let square = document.createElement('div')
-        square.className="cell"
-        square.innerHTML = game.board[i];
-
-        if (game.board[i] != 0) {
-            let color = colors[Math.log2(game.board[i])];
-            console.log(color)
-            square.setAttribute("style", "background-color: " + color)
-            // square.setAttribute("")
-        } else {
-            square.innerHTML = "";
-        }
-        
-        gameBoard.appendChild(square)
-        //game.board.push(square);
-    }
-
+function updateWindow() {   
     let score = document.getElementById('score');
     score.innerHTML = game.score
+   
+    if (game.over) {
+        alert("Game Over! Score: " + game.score);
+    }
+
+    if (!game.over) {
+      while (gameBoard.firstChild) {
+        gameBoard.removeChild(gameBoard.firstChild);
+      }
+
+      for (let i=0; i < game.size*game.size; i++) {
+          let square = document.createElement('div')
+          square.className="cell"
+          square.innerHTML = game.board[i];
+
+          if (game.board[i] != 0) {
+              let color = colors[Math.log2(game.board[i])];
+              square.setAttribute("style", "background-color: " + color)
+          } else {
+              square.innerHTML = "";
+          }
+          
+          gameBoard.appendChild(square)
+      }
+    }
 }
