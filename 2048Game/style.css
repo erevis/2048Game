@@ -40,21 +40,29 @@ body {position: relative;}
 }
 
 .score-container {
-    text-align:left;
-    margin:0;
     position:absolute;  
+    text-align:left;
+    width: 5%;
+    height: 8%;
+    margin: 0;
+    top: 0;
     padding-right: 40px;
     padding-left: 10px;
     padding-top: 5px;
     font-family: Arial Black;
     color: #989890;
-    width: 5%;
-    height: 8%;
     background-color: #615751;
     border-radius: 10px;
 }
 
 #reset {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    margin: 20px 2px;
+    width: 8%;
+    height: 8%;
+    font-size: 100%;
     transition-duration: 0.4s;
     border-radius: 10px;
     background-color:#615751;
@@ -63,11 +71,6 @@ body {position: relative;}
     color: #989890;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 100%;
-    margin: 20px 2px;
-    width: 8%;
-    height: 8%;
     cursor: pointer;
 }
 
@@ -93,7 +96,6 @@ body {position: relative;}
     flex: 1;
     text-align: center;
     font-size: 130%;
-    /* width: 0vw; */
     height: 15vh;
     margin: 0;
     font-family: Arial Black;
