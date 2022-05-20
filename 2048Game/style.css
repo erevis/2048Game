@@ -1,6 +1,7 @@
 body, html {
   width: 100%; 
-  height: 100%; 
+  height: 100%;
+  margin: 0;
   background-image: linear-gradient(#c4746e, #c44a41); 
   overflow: hidden; overflow-x: hidden;
 }
@@ -44,7 +45,7 @@ body {position: relative;}
     text-align:left;
     width: 5%;
     height: 8%;
-    margin: 0;
+    margin: 1%;
     top: 0;
     padding-right: 40px;
     padding-left: 10px;
@@ -59,7 +60,8 @@ body {position: relative;}
     position: absolute;
     display: inline-block;
     bottom: 0;
-    margin: 20px 2px;
+    left: 0;
+    margin: 1%;
     width: 8%;
     height: 8%;
     font-size: 100%;
